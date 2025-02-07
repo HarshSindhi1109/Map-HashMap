@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class NewMap {
@@ -12,5 +13,20 @@ public class NewMap {
         map.put("a4", "Ryomen Sukuna");
 
         System.out.println(map);
+
+//        for(String key : map.keySet()) {
+//            System.out.println("Key: "+ key + " Value: "+ map.get(key));
+//        }
+//
+//        for (Map.Entry<String, String> entry : map.entrySet()) {
+//            System.out.println("Key: "+ entry.getKey() +" Value: " + entry.getValue());
+//        }
+
+        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+            Map.Entry<String, String> temp = iterator.next();
+            System.out.println("Key: "+ temp.getKey() +" Value: " + temp.getValue());
+        }
     }
 }
